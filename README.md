@@ -43,7 +43,7 @@ Pastikan Anda telah menginstal **Node.js** dan **React Native CLI** secara globa
 
 1.  **Kloning Repositori:**
     ```bash
-    git clone <URL_REPOSITORI>
+    git clone https://github.com/Bintang1213/nativrik.git
     cd nativrik
     ```
 
