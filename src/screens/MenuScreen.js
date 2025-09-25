@@ -171,6 +171,22 @@ const MenuScreen = ({navigation}) => {
     }
   };
 
+  // ✅ Tambahkan fungsi handleChat
+  const handleChat = () => {
+    if (!global.userToken || !global.userData) {
+      Alert.alert(
+        'Login Diperlukan',
+        'Anda harus login terlebih dahulu untuk memulai chat.',
+      );
+      return;
+    }
+
+    navigation.navigate('Chat', {
+      user: global.userData,
+      token: global.userToken,
+    });
+  };
+
   const renderCategoryItem = ({item}) => (
     <TouchableOpacity
       style={[
@@ -328,6 +344,11 @@ const MenuScreen = ({navigation}) => {
         <TouchableOpacity style={styles.navItem}>
           <Icon name="receipt-outline" size={24} color="#636E72" />
           <Text style={styles.navText}>Riwayat</Text>
+        </TouchableOpacity>
+        {/* ✅ Tombol Chat Baru */}
+        <TouchableOpacity style={styles.navItem} onPress={handleChat}>
+          <Icon name="chatbubbles-outline" size={24} color="#636E72" />
+          <Text style={styles.navText}>Chat</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

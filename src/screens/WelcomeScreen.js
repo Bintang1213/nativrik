@@ -35,24 +35,30 @@ const WelcomeScreen = ({navigation}) => {
             />
           </View>
 
-          {/* Decorative Elements */}
+          {/* Subtle Decorative Elements */}
           <View style={styles.decorations}>
             <View
               style={[
                 styles.floatCircle,
-                {top: 80, left: 20, width: 50, height: 50},
+                {top: 70, left: 25, width: 60, height: 60, opacity: 0.08},
               ]}
             />
             <View
               style={[
                 styles.floatCircle,
-                {top: 150, right: 30, width: 30, height: 30},
+                {top: 140, right: 35, width: 35, height: 35, opacity: 0.12},
               ]}
             />
             <View
               style={[
                 styles.floatCircle,
-                {bottom: 100, left: 40, width: 40, height: 40},
+                {bottom: 80, left: 45, width: 45, height: 45, opacity: 0.1},
+              ]}
+            />
+            <View
+              style={[
+                styles.floatCircle,
+                {top: 100, right: 80, width: 25, height: 25, opacity: 0.15},
               ]}
             />
           </View>
@@ -62,8 +68,10 @@ const WelcomeScreen = ({navigation}) => {
         <View style={styles.bottomSection}>
           {/* Welcome Content */}
           <View style={styles.contentArea}>
-            <Text style={styles.mainTitle}>Jatuh Cinta</Text>
-            <Text style={styles.mainTitle}>dengan Makanan!</Text>
+            <View style={styles.titleContainer}>
+              <Text style={styles.mainTitle}>Jatuh Cinta</Text>
+              <Text style={styles.mainTitle}>dengan Makanan!</Text>
+            </View>
 
             <View style={styles.titleDivider} />
 
@@ -78,7 +86,7 @@ const WelcomeScreen = ({navigation}) => {
           <View style={styles.actionArea}>
             <TouchableOpacity
               style={styles.ctaButton}
-              activeOpacity={0.8}
+              activeOpacity={0.85}
               onPress={handleStart}>
               <Text style={styles.ctaText}>Mari Mulai</Text>
               <View style={styles.ctaIcon}>
@@ -103,31 +111,31 @@ const styles = StyleSheet.create({
 
   // Top Section - Crimson
   topSection: {
-    flex: 0.55, // 55% of screen
+    flex: 0.58,
     backgroundColor: '#DC143C',
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
   },
 
-  // Logo Design
+  // Enhanced Logo Design
   logoContainer: {
-    backgroundColor: 'rgba(255, 255, 255, 0.95)',
-    borderRadius: 30,
-    padding: 25,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 35,
+    padding: 28,
     shadowColor: '#000',
-    shadowOffset: {width: 0, height: 15},
-    shadowOpacity: 0.25,
-    shadowRadius: 30,
-    elevation: 20,
-    marginBottom: 20,
+    shadowOffset: {width: 0, height: 18},
+    shadowOpacity: 0.28,
+    shadowRadius: 32,
+    elevation: 22,
+    marginBottom: 15,
   },
   logoImage: {
-    width: 220,
-    height: 220,
+    width: 210,
+    height: 200,
   },
 
-  // Decorative Elements
+  // Subtle Decorative Elements
   decorations: {
     position: 'absolute',
     top: 0,
@@ -144,76 +152,84 @@ const styles = StyleSheet.create({
 
   // Bottom Section - White
   bottomSection: {
-    flex: 0.45, // 45% of screen
+    flex: 0.42,
     backgroundColor: '#FFFFFF',
-    borderTopLeftRadius: 35,
-    borderTopRightRadius: 35,
-    marginTop: -20, // Slight overlap
-    paddingTop: 40,
-    paddingHorizontal: 30,
+    borderTopLeftRadius: 38,
+    borderTopRightRadius: 38,
+    marginTop: -22,
+    paddingTop: 45,
+    paddingHorizontal: 32,
     justifyContent: 'space-between',
     shadowColor: '#000',
-    shadowOffset: {width: 0, height: -10},
-    shadowOpacity: 0.1,
-    shadowRadius: 20,
-    elevation: 15,
+    shadowOffset: {width: 0, height: -12},
+    shadowOpacity: 0.12,
+    shadowRadius: 22,
+    elevation: 18,
   },
 
-  // Content Area
+  // Enhanced Content Area
   contentArea: {
     alignItems: 'center',
-    paddingTop: 10,
+    paddingTop: 8,
+  },
+  titleContainer: {
+    alignItems: 'center',
+    marginBottom: 25,
   },
   mainTitle: {
-    fontSize: 32,
+    fontSize: 30,
     fontWeight: '800',
-    color: '#2D3436',
+    color: '#1A1A1A',
     textAlign: 'center',
-    lineHeight: 38,
+    lineHeight: 36,
+    letterSpacing: 0.3,
   },
   titleDivider: {
-    width: 70,
+    width: 75,
     height: 4,
     backgroundColor: '#DC143C',
     borderRadius: 2,
-    marginVertical: 25,
+    marginVertical: 22,
   },
   subtitle: {
     fontSize: 16,
-    color: '#636E72',
+    color: '#555555',
     textAlign: 'center',
-    lineHeight: 26,
+    lineHeight: 25,
     fontWeight: '500',
+    letterSpacing: 0.2,
   },
 
-  // Action Area
+  // Enhanced Action Area
   actionArea: {
-    paddingBottom: 20,
+    paddingBottom: 25,
   },
   ctaButton: {
     backgroundColor: '#DC143C',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 18,
-    borderRadius: 25,
+    paddingVertical: 20,
+    paddingHorizontal: 35,
+    borderRadius: 28,
     shadowColor: '#DC143C',
-    shadowOffset: {width: 0, height: 10},
-    shadowOpacity: 0.3,
-    shadowRadius: 20,
-    elevation: 15,
+    shadowOffset: {width: 0, height: 12},
+    shadowOpacity: 0.35,
+    shadowRadius: 22,
+    elevation: 18,
   },
   ctaText: {
     color: '#FFFFFF',
-    fontSize: 19,
+    fontSize: 18,
     fontWeight: '700',
-    marginRight: 10,
+    marginRight: 12,
+    letterSpacing: 0.5,
   },
   ctaIcon: {
     backgroundColor: 'rgba(255, 255, 255, 0.25)',
-    borderRadius: 15,
-    width: 30,
-    height: 30,
+    borderRadius: 18,
+    width: 32,
+    height: 32,
     justifyContent: 'center',
     alignItems: 'center',
   },
